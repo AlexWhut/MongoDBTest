@@ -14,19 +14,20 @@
     </div>
 
     <script>
-        // Obtener el usuario del almacenamiento local
-        const username = localStorage.getItem("username");
+document.addEventListener("DOMContentLoaded", () => {
+    const username = localStorage.getItem("username");
+    if (!username) {
+        window.location.href = "index.html"; // Redirigir al login si no hay usuario
+    } else {
+        document.getElementById("usernameDisplay").innerText = `Bienvenido, ${username}`;
+    }
+});
 
-        if (!username) {
-            window.location.href = "index.html"; // Redirige si no hay sesión activa
-        } else {
-            document.getElementById("usernameDisplay").innerText = username;
-        }
+function logout() {
+    localStorage.removeItem("username");
+    window.location.href = "index.html";
+}
 
-        function logout() {
-            localStorage.removeItem("username"); // Elimina la sesión
-            window.location.href = "index.html"; // Redirige al login
-        }
     </script>
 </body>
 </html>

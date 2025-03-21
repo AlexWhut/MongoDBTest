@@ -1,5 +1,5 @@
 document.getElementById("loginForm").addEventListener("submit", async function(event) {
-    event.preventDefault(); // Evita recargar la página
+    event.preventDefault();
 
     const username = document.querySelector("input[name='username']").value;
     const password = document.querySelector("input[name='password']").value;
@@ -12,12 +12,11 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
         body: JSON.stringify({ username, password })
     });
 
-    const data = await response.json();
-
     if (response.ok) {
-        localStorage.setItem("username", username); // Guarda el usuario en el almacenamiento local
-        window.location.href = "main.html"; // Redirige a main.html
+        const user = await response.json();
+        localStorage.setItem("username", user.username);
+        window.location.href = "main.html";
     } else {
-        alert("Error: " + data.message);
+        alert("Credenciales incorrectas");
     }
 });

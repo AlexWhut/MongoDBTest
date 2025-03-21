@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="styles/styles.css"> <!-- Enlace al archivo CSS -->
 </head>
 <body>
     <div class="container">
-        <h2>Iniciar Sesión</h2>
-        <form id="loginForm">
-            <input type="text" name="username" placeholder="Usuario" required>
-            <input type="password" name="password" placeholder="Contraseña" required>
-            <button type="submit">Ingresar</button>
-        </form>
-        <p class="register">
-            ¿No tienes cuenta? <a href="registrarse.html">Regístrate aquí</a>
-        </p>
+        <div class="login-section">
+            <h2>Iniciar Sesión</h2><br><br>
+            <form id="loginForm">
+                <input type="text" name="username" placeholder="Usuario" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button type="submit">Ingresar</button>
+            </form>
+            <p class="register">
+                ¿No tienes cuenta? <a href="registrarse.html">Regístrate aquí</a>
+            </p>
+        </div>
     </div>
-    <script src="script.js"></script> <!-- Asegúrate de que este sea el archivo correcto -->
-
+    <div class="background-section" style="background: url('wall.png') no-repeat center center/cover;"></div>
+    <script src="script.js"></script>
 </body>
-
-<footer></footer>
 </html>
